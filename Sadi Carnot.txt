@@ -10,8 +10,31 @@ quais são as aplicações e relevancia na atualidade.
 1 - quem foi Sadi Carnot
 
 Nicolas Léonard Sadi Carnot nasceu no dia 1 de junho de 1796 na capital da França (Paris) 
-filho de Lazare Carnot. Entrou para a escola École Polytechnique (Paris) e na École Genie (Metz). Tornando-se um renomado físico, matemático e engenheiro mecânico francês. Mais conhecido como "pai da termodinâmica".
+filho de Lazare Carnot, entrou para a escola École Polytechnique (Paris) e para a École Génie (Metz), tornando-se um renomado físico, matemático e engenheiro mecânico francês. Mais conhecido como "pai da termodinâmica".
 
-Em 1823, Sadi Carnot escreve um artigo não publicado no qual buscava compreender e encontrar uma expressão matemática para o trabalho produzido por um quilograma de vapor. Contudo, apenas em 1966, 143 anos depois de ser escrito que o artigo veio ao publico.
-Somente em 1824, que Sadi Carnot publica sua única obra "Réflexions sur la Puissance Motrice du Feu et sur les Machines Propres a Développer Cette Puissance" (Reflexões sobre a Potência Motriz do Fogo e Máquinas Próprias para Desenvolver Essa Potência).
-Em 1831, Sadi começou a investigar
+Em 1823, Sadi Carnot escreve um artigo não publicado no qual buscava compreender e encontrar uma expressão matemática para o trabalho produzido por um quilograma de vapor. Contudo, apenas em 1966, 143 anos depois de ter sido escrito, o artigo foi publicado.
+Em 1824, Sadi Carnot publicou sua única obra "Réflexions sur la Puissance Motrice du Feu et sur les Machines Propres a Développer Cette Puissance" (Reflexões sobre a Potência Motriz do Fogo e Máquinas Próprias para Desenvolver Essa Potência).
+
+Em 1831, Sadi começou a investigar as propriedades dos gases após interessar-se pelos problemas industriais, em especial a relação entre pressão e temperatura. Em 1832, Nicolas Léonard Sadi Carnot faleceu devido à cólera, no dia 24 de agosto. Apesar do costume da época de incinerar os pertences dos mortos, algumas anotações suas foram preservadas, confirmando suas ideias revolucionárias: o calor pode ser convertido em trabalho, e sua forma pode ser transformada. Por isso, Sadi Carnot é considerado o fundador da termodinâmica.
+
+
+
+2 - Quais são as etapas do ciclo de carnot.
+
+O gás sofre uma transformação isotérmica. Se expande e absorve a quantidade de calor Q1 de uma fonte quente à temperatura T1.
+
+Após a transformação isotérmica, o gás sofre uma transformação adiabática (sem trocas de calor com o meio). Como se expande adiabaticamente, sua temperatura cai para um valor T2.
+
+Em seguida, o gás sofre uma compressão isotérmica e libera uma quantidade de calor Q2 para a fonte fria à temperatura T2.
+
+Finalmente, retorna a condição inicial após sofrer uma compressão adiabática.
+
+
+3- quais são as aplicações e relevancia na atualidade.
+
+
+O Ciclo de Carnot, apesar de ser um modelo teórico idealizado, tem diversas aplicações práticas que influenciam o design e a operação de máquinas térmicas no mundo real. Um dos principais campos de aplicação é o desenvolvimento de motores de automóveis. Os princípios do Ciclo de Carnot ajudam a melhorar a eficiência dos motores de combustão interna, otimizando a conversão de calor em trabalho mecânico.
+
+Outro campo importante é o das usinas de energia térmica. Usinas que utilizam vapor para gerar eletricidade, como as usinas termelétricas e nucleares, aplicam os conceitos do Ciclo de Carnot para maximizar a eficiência na conversão de calor em energia elétrica. Embora essas usinas não possam atingir a eficiência teórica do Ciclo de Carnot, os princípios fornecem diretrizes para reduzir perdas e melhorar o desempenho.
+
+Além disso, o Ciclo de Carnot também influencia o design de sistemas de refrigeração e bombas de calor. Esses dispositivos operam em ciclos inversos ao de uma máquina térmica, e a compreensão do rendimento e das trocas de calor ajuda a otimizar seu funcionamento, aumentando a eficiência energética e reduzindo o consumo de energia.
