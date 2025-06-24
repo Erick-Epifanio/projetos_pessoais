@@ -1,11 +1,16 @@
 Storytelling
 
 
-Olá Tudo bom? Meu nome é Erick Epifanio Da Silva, atualmente sou um estudante da Escola Nuvem e estou finalizando o ensino médio.
+Olá Tudo bom? Meu nome é Erick Epifanio Da Silva, Atualmente, sou estudante da Escola da Nuvem e estou finalizando o ensino médio.
 
-Sou bastante determinado, procuro sempre ser persistence e resiliente em um trabalho até que ele seja concluído, posso dizer que sou perfeccionista em meus trabalhor ou projetos pessoais, sempre em busca de melhor o que for possível, isso é uma das minha qualidades, mas não deixo de lado a minha curiosidade em aprender novas coisas e como elas funcionam, outra caracteristica minha. No começo eu costumo ser um pouco mais fechado na questão social quando estou interagindo com novas pessoas, com o tempo costumo ser mais social que antes. 
+Me considero uma pessoa determinada. Gosto de ir até o fim em tudo o que começo e sou bastante persistente e resiliente, principalmente quando estou envolvido em um projeto ou trabalho. Tenho um lado perfeccionista — sempre busco melhorar o que for possível e entregar o melhor resultado.
 
-Sou um Entusiasta da tecnologia da informação, em especial a área voltada para hardware, mas atualmente eu vim a me interessando por programação e computação em nuvem. Fiz um curso basico de python pela fundação Bradesco, e continuo a estudar essa linguagem, e agora estou cursando pela EScola da Nuvem a AWS re/start. Talvez seja valido eu dizer que estou iniciando um projeto para desenvolvolver de jogo com meus amigos de escola, o nosso intuito é aprender novas linguagens de programação e novas tecnologias que podem incrementar novas ablidades com isso.
+Além disso, sou movido pela curiosidade. Gosto de aprender coisas novas, entender como elas funcionam e me aprofundar em temas que despertam meu interesse. No começo, posso parecer mais reservado quando estou com pessoas novas, mas com o tempo vou me soltando e me tornando mais sociável.
 
-Bom... isso foi tudo, espero que tenha bom dia e até.
+Tenho um grande interesse na área de tecnologia da informação, especialmente em hardware. Mas, recentemente, comecei a me encantar pelo mundo da programação e da computação em nuvem. Fiz um curso básico de Python pela Fundação Bradesco e continuo estudando a linguagem.
 
+Atualmente, estou cursando o programa AWS re/Start pela Escola da Nuvem, o que tem expandido ainda mais meu conhecimento.
+
+Ah, e vale mencionar que estou iniciando, com alguns amigos da escola, um projeto de desenvolvimento de um jogo. A ideia é aprender juntos novas linguagens de programação e explorar tecnologias que nos ajudem a desenvolver novas habilidades de forma prática.
+
+Bom, esse é um pouco sobre mim. Agradeço por me ouvir. Tenha um ótimo dia
