@@ -33,7 +33,6 @@ class System_json:
             for KEY, DATA  in loading.items():
                 print(f"| {KEY} -- {DATA}")
             print("+","-"*25,"+")
-
             
     def WRITE_json(self):
         with open(self.File, "w") as FILE:
