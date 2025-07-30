@@ -1,18 +1,18 @@
-import json as js
-import random
 import os
+import random
+import json as js
 
 
-class main:                             
+class Main:                            
     def __init__(self, file):
         self.memory_working_temp = {}
         self.file_temp_json = file + "_temp.json"
-        self.file_json = file +".json"
+        self.file_json = file + ".json"
 
 
-    def pre_load(self):
+    def Pre_Load(self):
         try:                    # Pré carregamento dos dados de arquivo existentes para serem modificados
-            with open(self.file_json,'r') as file_r:
+            with open(self.file_json, 'r') as file_r:
                 load = js.load(file_r)
                 self.memory_working_temp.update(load)
         except FileNotFoundError:
@@ -23,10 +23,9 @@ class main:
             if os.path.exists(self.file_json):
                 self.pre_load()
         except FileNotFoundError:
-            pass
-        
+            pass        
         def increment(data_insert):
-            self.pre_load()
+            self.Pre_Load()
             self.memory_working_temp.update(data_insert)
             with open(self.file_temp_json, 'w') as file_in:
                 js.dump(self.memory_working_temp, file_in, indent=4)
@@ -54,9 +53,6 @@ class main:
                 js.dump(self.memory_working_temp, real_file, ensure_ascii=False, indent=4)
             os.remove(self.file_temp_json)
             print("arquivo temporario deletado com sucesso")
-        
-        
-
 
 def archive():
     archive_name = str(input("Digite o nome do arquivo, não precisa colocar a extensão.\n/> "))
@@ -88,7 +84,6 @@ def insert_data():
         except KeyboardInterrupt:
             print("\nSaindo do insersor...")
             run = False
-    return package
-    
-master = main(archive())
+    return package   
+master = Main(archive())
 master.write_json(insert_data())
