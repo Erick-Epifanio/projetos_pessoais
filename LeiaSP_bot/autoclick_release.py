@@ -15,6 +15,7 @@ class AutoClick:
         self.loop_process = True  # controle de processo (RUN/STOP)
         self.controlkey = keyboard.add_hotkey("ctrl + del", self.toggle)
         self.delayofstage = None
+        self.uniquecheck = True
         self.count = 0
 
     def toggle(self):
@@ -53,8 +54,6 @@ class AutoClick:
                 confirmlocate = auto.locateOnScreen(self.asset_confirm, confidence=0.7)
                 auto.click(confirmlocate.x, confirmlocate.y)
 
-            time.sleep(self.delayofstage)
-
         except auto.ImageNotFoundException:
             # Não vou implementar nada nesse bloco
             # é apenas uma tentativa invalida de detecção de imagem
@@ -76,7 +75,11 @@ class AutoClick:
                 else:
                     print("Terminando processo atual\nStatus do processo: PAUSADO")
                     keyboard.wait("ctrl+del")
-                time.sleep(0.1)
+
+                if self.uniquecheck:
+                    self.uniquecheck = not self.uniquecheck
+                else:
+                    time.sleep(self.delayofstage)
 
         except KeyboardInterrupt:
             print("\nSaindo....")
@@ -87,4 +90,4 @@ class AutoClick:
 Master = AutoClick()
 Master.run_body()
 
-# Lembrando que a versão anterior foi feita de forma desleixada.....
+# Refiz esse programa, pois a versão anterior não levava o PEP8 em conta....
