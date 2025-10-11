@@ -20,8 +20,8 @@ class BackProcess:
         self.time_delay = None
 
         # Imagens
-        self.imagem_target_1 = "C:/Users/erick/Desktop/projeto/LeiaSP_bot/next.png"
-        self.imagem_target_2 = "C:/Users/erick/Desktop/projeto/LeiaSP_bot/confirmation.png"
+        self.imagem_target_1 = "images/next.png"
+        self.imagem_target_2 = "images/confirmation.png"
 
 
     def toggle(self):
@@ -39,17 +39,17 @@ class BackProcess:
                 if auto.locateOnScreen(self.imagem_target_2, confidence=0.7):
                     set_postion_target_2 = auto.locateOnScreen(self.imagem_target_2, confidence=0.7)
                     auto.moveTo(set_postion_target_2)
-                    #auto.click()
+                    auto.click()
 
                 else:
                     set_postion_target_1 = auto.locateOnScreen(self.imagem_target_1, confidence=0.7)
                     auto.moveTo(set_postion_target_1)
-                    #auto.click()
+                    auto.click()
 
             except auto.ImageNotFoundException:
                 # Não vou precisar tratar essa exceção, apenas quero eu a ignore.
                 pass
-            time.sleep(self.time_delay)
+            time.sleep(self.time_delay * 60)
 
     def instance_config(self):
         """Processo de instanciamento da thread de execução do auto click"""
@@ -65,7 +65,7 @@ class WindowsConfig(BackProcess):
         super().__init__()
         self.root = tk.Tk()
         self.title = self.root.title("AutoClick by VeilCruss")
-        self.icon = tk.PhotoImage(file="C:/Users/erick/Desktop/projeto/LeiaSP_bot/template.png")
+        self.icon = tk.PhotoImage(file="images/template.png")
         self.root.iconphoto(True, self.icon)
         self.size = self.root.geometry("500x300")
         self.size_lock = self.root.resizable(False, False)
