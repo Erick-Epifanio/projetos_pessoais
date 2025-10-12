@@ -10,7 +10,6 @@ import pyautogui as auto
 from keyboard import add_hotkey
 
 
-
 class BackProcess:
     """Configuração de execução do auto click"""
 
@@ -20,9 +19,10 @@ class BackProcess:
         self.time_delay = None
 
         # Imagens
-        self.imagem_target_1 = "images/next.png"
-        self.imagem_target_2 = "images/confirmation.png"
-
+        self.base_dir = __file__.replace("\\", "/")
+        self.imagem_target_1 = "imagens/next.png"
+        self.imagem_target_2 = "imagens/confirmation.png"
+        print(self.imagem_target_1)
 
     def toggle(self):
         """Alternancia de estado True/False"""
@@ -36,18 +36,16 @@ class BackProcess:
         while self.loopstate:
             try:
                 auto.PAUSE = 0.5
-                if auto.locateOnScreen(self.imagem_target_2, confidence=0.7):
+                if auto.locateOnScreen(self.imagem_target_1, confidence=0.7):
+                    set_postion_target_1 = auto.locateOnScreen(self.imagem_target_1, confidence=0.7)
+                    auto.moveTo(set_postion_target_1)
+                    auto.click()
+                else:
                     set_postion_target_2 = auto.locateOnScreen(self.imagem_target_2, confidence=0.7)
                     auto.moveTo(set_postion_target_2)
                     auto.click()
 
-                else:
-                    set_postion_target_1 = auto.locateOnScreen(self.imagem_target_1, confidence=0.7)
-                    auto.moveTo(set_postion_target_1)
-                    auto.click()
-
             except auto.ImageNotFoundException:
-                # Não vou precisar tratar essa exceção, apenas quero eu a ignore.
                 pass
             time.sleep(self.time_delay * 60)
 
@@ -65,7 +63,8 @@ class WindowsConfig(BackProcess):
         super().__init__()
         self.root = tk.Tk()
         self.title = self.root.title("AutoClick by VeilCruss")
-        self.icon = tk.PhotoImage(file="images/template.png")
+        self.template = "imagens/template.png"
+        self.icon = tk.PhotoImage(file=self.template)
         self.root.iconphoto(True, self.icon)
         self.size = self.root.geometry("500x300")
         self.size_lock = self.root.resizable(False, False)
@@ -208,16 +207,23 @@ class WindowsConfig(BackProcess):
 
         self.toggle()
 
+        if self.loopstate:
+            massage_info = showinfo(
+                title="AutoClick info",
+                message="Processo já esta pausado :/",
+                default="ok"
+            )
+            self.button_stop.config(state="enable")
+
         if not self.loopstate:
             massage_info = showinfo(
                 title="AutoClick info",
                 message="Processo pausado",
                 default="ok"
-            )
-
+                )
             if massage_info == "ok":
-                self.button_start.config(state="enable")
                 self.toggle()
+                self.button_start.config(state="enable")
                 self.button_stop.config(state="disable")
 
     def run(self):
