@@ -205,9 +205,9 @@ class WindowsConfig(BackProcess):
     def action_shotcut(self):
         """atalho"""
 
-        self.toggle()
+        
 
-        if self.loopstate:
+        if not self.loopstate:
             massage_info = showinfo(
                 title="AutoClick info",
                 message="Processo já esta pausado :/",
@@ -215,7 +215,8 @@ class WindowsConfig(BackProcess):
             )
             self.button_stop.config(state="enable")
 
-        if not self.loopstate:
+        if self.loopstate:
+            self.toggle()
             massage_info = showinfo(
                 title="AutoClick info",
                 message="Processo pausado",
