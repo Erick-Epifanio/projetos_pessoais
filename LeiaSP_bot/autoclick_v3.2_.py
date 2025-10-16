@@ -41,7 +41,7 @@ class BackProcess:
                 try:
                     images_scan = auto.locateOnScreen(
                         images_target,
-                        confidence=0.6
+                        confidence=0.7
                         )
 
                     if images_scan:
@@ -78,6 +78,8 @@ class WindowsConfig(BackProcess):
         self._root.geometry("500x300")
         self._root.resizable(False, False)
         self._root.protocol("WM_DELETE_WINDOW", self.close_interface)
+        self.icon = tk.PhotoImage(file="imagens/template.png")
+        self._root.iconphoto(True, self.icon)
 
         # Estilização
         # Styling
