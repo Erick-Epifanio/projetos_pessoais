@@ -4,11 +4,11 @@ rmdir /s /q dist
 rmdir /s /q build
 
 REM Compila com PyInstaller (one-folder para evitar _MEI)
-pyinstaller --noconsole --clean generic_autoclick.py
+pyinstaller --noconsole --clean autoclick_v3.2_.py
 
-xcopy imagens dist\generic_autoclick\imagens /E /Y
+xcopy imagens dist\autoclick_v3.2_\imagens /E /Y
 
 rmdir /s /q build
-del generic_autoclick.spec
+del autoclick_v3.2_.spec
 
 pause
