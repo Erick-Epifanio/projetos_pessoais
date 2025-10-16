@@ -52,7 +52,7 @@ class BackProcess:
                     continue
 
             self.cycle += 1
-            time.sleep(self.time_delay)
+            time.sleep(self.time_delay * 60)
 
     def instance_config(self):
         """configuração da thread / thread configuration"""
