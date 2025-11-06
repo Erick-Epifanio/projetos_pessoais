@@ -23,7 +23,6 @@ class BackProcess:
         self.loopstate = False
         self.time_delay = 0
         self.cycle = 0
-        auto.PAUSE = 0.1
         self.positions_target_list = []
 
     def set_position(self):
@@ -35,9 +34,10 @@ class BackProcess:
 
         while self.loopstate:
             for target in self.positions_target_list:
+                auto.PAUSE = (self.time_delay * 60)
                 auto.click(target)
             self.cycle += 1
-            time.sleep(self.time_delay * 60)
+            time.sleep(1)
 
     def instance_config(self):
         """configuração da thread / thread configuration"""
@@ -144,7 +144,7 @@ class WindowsConfig(BackProcess):
             "\nO que é tempo de ciclo? Simples,"
             "é o tempo que permanencia em cada pagina.\n"
             "Ou seja, cada ciclo representa uma pagina.\n\n"
-            "Para configurar as posições use: Ctrl + '\n\n"
+            "Para configurar as posições use: Alt + '\n\n"
             "Para pausar via atalho é: Ctrl + Del\n",
             background=self.back_color
         )
