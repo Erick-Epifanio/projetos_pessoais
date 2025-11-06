@@ -17,25 +17,42 @@ class BackProcess:
 
     def __init__(self):
 
+        # Lista de imagens usadas
+        # List of images used
+
+        self.images_list = [
+            "imagens/next_theme_1.png",
+            "imagens/confirmation_theme_1.png",
+            "imagens/next_theme_2.png",
+            "imagens/next_theme_3.png"
+        ]
+
         # Flags de controle & tempo de ciclo & contador de ciclos
         # Control flags & cycle time & cycle counter
 
         self.loopstate = False
-        self.time_delay = 0
+        self.time_delay = 3
         self.cycle = 0
-        auto.PAUSE = 0.1
-        self.positions_target_list = []
-
-    def set_position(self):
-        """Captura de posição do mouse"""
-        self.positions_target_list.append(auto.position())
+        auto.PAUSE = 1
 
     def autoclick_process(self):
         """Sistema do AutoClick / AutoClick System"""
 
         while self.loopstate:
-            for target in self.positions_target_list:
-                auto.click(target)
+            for images_target in self.images_list:
+                try:
+                    images_scan = auto.locateOnScreen(
+                        images_target,
+                        confidence=0.7
+                        )
+
+                    if images_scan:
+                        set_postion = auto.center(images_scan)
+                        auto.click(set_postion)
+
+                except auto.ImageNotFoundException:
+                    continue
+
             self.cycle += 1
             time.sleep(self.time_delay * 60)
 
@@ -63,8 +80,8 @@ class WindowsConfig(BackProcess):
         self._root.geometry("500x300")
         self._root.resizable(False, False)
         self._root.protocol("WM_DELETE_WINDOW", self.close_interface)
-        # self.icon = tk.PhotoImage(file="imagens/template.png")
-        # self._root.iconphoto(True, self.icon)
+        self.icon = tk.PhotoImage(file="imagens/template.png")
+        self._root.iconphoto(True, self.icon)
 
         # Estilização
         # Styling
@@ -85,11 +102,9 @@ class WindowsConfig(BackProcess):
             )
         self.process_info = None
         self.button = None
-        self.target_count = None
 
         # Atalho
         self.shotcut = add_hotkey("ctrl+del", self.toggle)
-        self.set_position = add_hotkey("alt+'", callback=self.set_position)
 
     def toggle(self):
         """Controle de estado do loop / Loop state control"""
@@ -106,10 +121,7 @@ class WindowsConfig(BackProcess):
             self.instance_config()
         else:
             self.button.config(text="Iniciar")
-            showinfo(
-                "status",
-                message=f"Processo pausado\nRepetição feitas: {self.cycle}"
-                )
+            showinfo("status", message="Processo pausado")
             self.process_info.config(
                 text="Status do processo: Parado",
                 foreground="red"
@@ -120,7 +132,6 @@ class WindowsConfig(BackProcess):
 
         if askokcancel("AutoClick by Erick Ep.", "deseja sair?"):
             remove_hotkey("ctrl+del")
-            remove_hotkey("alt+'")
             self._root.destroy()
 
     def text_title(self):
@@ -128,7 +139,7 @@ class WindowsConfig(BackProcess):
 
         title = ttk.Label(
             self._root,
-            text="AutoClick (NO IMAGE)\n",
+            text="AutoClick\n",
             font=self.font_config,
             background=self.back_color,
         )
@@ -143,14 +154,13 @@ class WindowsConfig(BackProcess):
             text="Antes de iniciar, é preciso selecionar o tempo por ciclo."
             "\nO que é tempo de ciclo? Simples,"
             "é o tempo que permanencia em cada pagina.\n"
-            "Ou seja, cada ciclo representa uma pagina.\n\n"
-            "Para configurar as posições use: Ctrl + '\n\n"
-            "Para pausar via atalho é: Ctrl + Del\n",
+            "Ou seja, cada ciclo representa uma pagina.\n\n\n"
+            "Para pausar via atalho é: Ctrl + Del",
             background=self.back_color
         )
 
         version = ttk.Label(
-            self.labelconteiner, text="v3.2 - (prototipo)",
+            self.labelconteiner, text="v3.3 - (Estável)",
             foreground="#636336",
             background=self.back_color
         )
